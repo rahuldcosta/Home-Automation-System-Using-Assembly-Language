@@ -1,0 +1,125 @@
+#%signature: 389135%
+.model temp_controller
+.inputs  TEMP \
+         SAMPLE_TIME \
+         DELTA_T \
+         TEST_13_0_0__0_IN \
+         TEST_14_0_0__0_IN \
+         TEST_15_0_0__0_IN
+.outputs FAN_ON \
+         FAN_OFF \
+         AC_ON \
+         AC_OFF \
+         HEATER_ON \
+         HEATER_OFF \
+         TEST_13_0_0__0_OUT \
+         TEST_14_0_0__0_OUT \
+         TEST_15_0_0__0_OUT \
+         ACT_2_0__0 \
+         ACT_16_0__0 \
+         PRE_ACT_0_0__0 \
+         ACT_18_0_0__0 \
+         ACT_21_0_0__0 \
+         ACT_24_0_0__0 \
+         ROOT_RETURN_ \
+         ROOT_HALTING_
+.names BOOT_REGISTER_ TEMP AUX_ACT_2_
+10 1
+.names AUX_ACT_2_ ACT_2_0__0
+1 1
+.names BOOT_REGISTER_ ACT_16_0__0
+1 1
+.names TEMP BOOT_REGISTER_ PRESENT_S0_0_
+00 0
+.names BOOT_REGISTER_ ACT_18_0_0__0
+1 1
+.names BOOT_REGISTER_ ACT_21_0_0__0
+1 1
+.names BOOT_REGISTER_ ACT_24_0_0__0
+1 1
+.names PAUSE_REG_21_ PAUSE_REG_9_ SELECT_6_
+00 0
+.names SELECT_6_ BOOT_REGISTER_ TO_PRESENT_6_
+10 1
+.names TO_PRESENT_6_ SAMPLE_TIME THEN_7_0_
+11 1
+.names THEN_7_0_ PRESENT_S0_0_ THEN_8_0_
+11 1
+.names TO_PRESENT_6_ SAMPLE_TIME ELSE_7_0_
+10 1
+.names PAUSE_REG_9_ ELSE_7_0_ TO_PRESENT_10_
+11 1
+.names TO_PRESENT_10_ PRESENT_S0_0_ THEN_11_0_
+11 1
+.names THEN_8_0_ THEN_11_0_ GO_12_0_
+00 0
+.names GO_12_0_ TEST_13_0_0__0_OUT
+1 1
+.names TEST_13_0_0__0_OUT TEST_13_0_0__0_IN TEST_13_0_0_
+11 1
+.names GO_12_0_ TEST_13_0_0_ ELSE_13_0_
+10 1
+.names ELSE_13_0_ TEST_14_0_0__0_OUT
+1 1
+.names TEST_14_0_0__0_OUT TEST_14_0_0__0_IN TEST_14_0_0_
+11 1
+.names ELSE_13_0_ TEST_14_0_0_ ELSE_16_0_
+10 1
+.names ELSE_16_0_ TEST_15_0_0__0_OUT
+1 1
+.names TEST_15_0_0__0_OUT TEST_15_0_0__0_IN TEST_15_0_0_
+11 1
+.names ELSE_16_0_ TEST_15_0_0_ ELSE_19_0_
+10 1
+.names PAUSE_REG_21_ ELSE_7_0_ CONT_21_0_
+11 1
+.names BOOT_REGISTER_ TEST_13_0_0_ TEST_14_0_0_ TEST_15_0_0_ ELSE_19_0_ CONT_21_0_ GO_21_0_
+000000 0
+.names THEN_7_0_ PRESENT_S0_0_ ELSE_8_0_
+10 1
+.names TO_PRESENT_10_ PRESENT_S0_0_ ELSE_11_0_
+10 1
+.names PAUSE_REG_9_ ELSE_11_0_ CONT_9_0_
+11 1
+.names ELSE_8_0_ CONT_9_0_ GO_9_0_
+00 0
+.names GO_21_0_ GO_9_0_ PARALLEL_4_UNION_K1_0_
+00 0
+.names GO_21_0_ GO_9_0_ PARALLEL_4_MIN_K1_B0_0_
+00 0
+.names SELECT_6_ BOOT_REGISTER_ PARALLEL_4_MIN_K0_B1_0_
+00 0
+.names SELECT_6_ BOOT_REGISTER_ PARALLEL_4_MIN_K0_B2_0_
+00 0
+.names SELECT_6_ BOOT_REGISTER_ PARALLEL_4_MIN_K0_B3_0_
+00 0
+.names PARALLEL_4_UNION_K1_0_ PARALLEL_4_MIN_K1_B0_0_ PARALLEL_4_MIN_K0_B1_0_ PARALLEL_4_MIN_K0_B2_0_ PARALLEL_4_MIN_K0_B3_0_ PARALLEL_4_CONT_K1_0_
+11111 1
+.names PARALLEL_4_CONT_K1_0_ ROOT_HALTING_
+1 1
+.names PRESENT_S0_0_ ROOT_HALTING_ TOPRE_S0_0_
+11 1
+.names TOPRE_S0_0_ PRE_ACT_0_0__0
+1 1
+.names FAN_ON
+0
+.names FAN_OFF
+0
+.names AC_ON
+0
+.names AC_OFF
+0
+.names HEATER_ON
+0
+.names HEATER_OFF
+0
+.names ROOT_RETURN_
+ 0
+.latch __temp_controller_false_wire BOOT_REGISTER_ 1
+.latch GO_9_0_ PAUSE_REG_9_ 0
+.latch GO_21_0_ PAUSE_REG_21_ 0
+.names __temp_controller_false_wire
+
+
+.end
+

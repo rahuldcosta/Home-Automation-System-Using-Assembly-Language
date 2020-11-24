@@ -1,0 +1,22 @@
+.model temp_controller_relations
+
+.inputs  \
+    TEMP_I__ \
+    SAMPLE_TIME_I__
+.outputs  \
+    TEMP \
+    SAMPLE_TIME
+
+# Implication: 0
+.names SAMPLE_TIME_I__ TEMP_I__ __IMPL_0
+10 0
+
+.names __IMPL_0 _REL_FILTER_
+1 1
+.names TEMP_I__ _REL_FILTER_ TEMP
+11 1
+
+.names SAMPLE_TIME_I__ _REL_FILTER_ SAMPLE_TIME
+11 1
+
+.end
